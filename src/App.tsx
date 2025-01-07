@@ -30,3 +30,5 @@ const App: React.FC = () => {
 export default App;
 
 // git add .; if ($?) { git commit -m "Оновлення сайту" } ; if ($?) { git push origin main } ; if ($?) { yarn deploy }
+//git add .; if ($?) { git commit -m "Оновлення сайту" } ; if ($?) { git push origin main } ; if ($?) { yarn deploy }
+// yarn git add . && yarn git commit -m "Опис змін" && yarn git push origin main
