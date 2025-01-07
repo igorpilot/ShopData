@@ -1,0 +1,2 @@
+ShopData-win32-x64/ShopData.exe !text !filter !merge !diff
+ShopData-win32-x64/ShopData.exe filter=lfs diff=lfs merge=lfs -text
