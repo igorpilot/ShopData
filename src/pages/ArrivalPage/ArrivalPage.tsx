@@ -1,12 +1,35 @@
 import React, {ChangeEvent, Dispatch, FormEvent, SetStateAction, useState} from 'react';
 import Table from "../../components/Table";
-import {columns} from "../InventoryPage/InventoryPage";
+
 import {Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField} from "@mui/material";
 import s from "./ArrivalPage.module.css"
 import {v1} from "uuid";
+
 type RowsType = {     id: string;     name: any;     brand: any;     quantity: any;     purchasePrice: any;     sellingPrice: any; }
 type ArrivalPageProps = {
     menu:string[]
+}
+const columns = [
+    { field: "id", headerName: "ID", width: 60 },
+    { field: "data", headerName: "Дата", width: 60 },
+    { field: "category", headerName: "Категорія", width: 160 },
+    { field: "name", headerName: "Назва", width: 150 },
+    { field: "description", headerName: "Опис", width: 150 },
+    { field: "brand", headerName: "Бренд", width: 90 },
+    { field: "quantity", headerName: "Кількість", width: 90 },
+    { field: "purchasePrice", headerName: "Ціна закупки", width: 90 },
+    { field: "profitPrice", headerName: "Націнка", width: 90 },
+    { field: "sellingPrice", headerName: "Ціна продажу", width: 90 },
+    { field: "code", headerName: "Штрих-код", width: 90 },
+    { field: "actionsChange",headerName: "Редагувати", width: 150, renderCell: (params:any) => <Button variant={'contained'} color={'primary'} onClick={()=>handleChange(params.row)}>Редагувати</Button>},
+    { field: "actionsDelete",headerName: "Видалити", width: 150, renderCell: (params:any) => <Button variant={'contained'} color={'primary'} onClick={()=>handleDelete(params.row)}>Видалити</Button>}
+
+];
+const handleChange =(row:any)=>{
+    alert(` ${row.name}`)
+}
+const handleDelete =(row:any)=>{
+    alert(` ${row.name}`)
 }
 export const ArrivalPage = (props:ArrivalPageProps) => {
 
@@ -33,7 +56,6 @@ type ArrivalAddPageProps = {
     menu: string[]
 }
 const ArrivalAddPage = (props: ArrivalAddPageProps)=>{
-    const [age, setAge] = React.useState('');
     const [category, setCategory] = React.useState('');
     const [name, setName] = React.useState('');
     const [description, setDescription] = React.useState('');
@@ -44,7 +66,7 @@ const ArrivalAddPage = (props: ArrivalAddPageProps)=>{
     const [code, setCode] = React.useState('');
 
 
-    const handleChange = (event: SelectChangeEvent) => {
+    const handleChange = (event:any) => {
         setCategory(event.target.value);
     };
     const handleTextChange = (event: ChangeEvent<HTMLInputElement| HTMLTextAreaElement>, field:string) => {
@@ -89,7 +111,7 @@ const ArrivalAddPage = (props: ArrivalAddPageProps)=>{
                 label="Категорія"
                 onChange={handleChange}
             >
-                {props.menu.map((category, index )=><MenuItem value={index} key={index} >{category}</MenuItem>)}
+                {props.menu.map((category, index )=><MenuItem value={category} key={index} >{category}</MenuItem>)}
 
             </Select>
         </FormControl>

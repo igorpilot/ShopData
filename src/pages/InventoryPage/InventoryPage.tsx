@@ -14,7 +14,7 @@ type ProductType = {
     code?: number
     actions?: ()=>void
 }
-export const columns = [
+const columns = [
     { field: "id", headerName: "ID", width: 60 },
     { field: "category", headerName: "Категорія", width: 160 },
     { field: "name", headerName: "Назва", width: 150 },
