@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ShopData/static/css/main.cffe7050.css",
-    "main.js": "/ShopData/static/js/main.fdbfda64.js",
+    "main.js": "/ShopData/static/js/main.0db03f13.js",
     "index.html": "/ShopData/index.html",
     "main.cffe7050.css.map": "/ShopData/static/css/main.cffe7050.css.map",
-    "main.fdbfda64.js.map": "/ShopData/static/js/main.fdbfda64.js.map"
+    "main.0db03f13.js.map": "/ShopData/static/js/main.0db03f13.js.map"
   },
   "entrypoints": [
     "static/css/main.cffe7050.css",
-    "static/js/main.fdbfda64.js"
+    "static/js/main.0db03f13.js"
   ]
 }
